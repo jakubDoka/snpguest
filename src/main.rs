@@ -1,17 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // This is the main entry point of the snpguest utility. The CLI includes subcommands for requesting and managing certificates, displaying information, fetching derived keys, and verifying certificates and attestation reports.
 
-mod certs;
-mod display;
-mod fetch;
-mod key;
-mod ok;
-mod preattestation;
-mod report;
-mod verify;
-
-#[cfg(feature = "hyperv")]
-mod hyperv;
+use ::snpquest::*;
 
 use certs::CertificatesArgs;
 use display::DisplayCmd;
@@ -21,8 +11,8 @@ use preattestation::PreAttestationCmd;
 use report::ReportArgs;
 use verify::VerifyCmd;
 
-use anyhow::{Context, Result};
-use clap::{arg, Parser, Subcommand, ValueEnum};
+use anyhow::Result;
+use clap::{arg, Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
