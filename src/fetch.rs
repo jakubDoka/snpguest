@@ -112,7 +112,7 @@ pub fn cmd(cmd: FetchCmd) -> Result<()> {
     }
 }
 
-mod cert_authority {
+pub mod cert_authority {
     use super::*;
     use openssl::x509::X509;
     use reqwest::StatusCode;
@@ -201,7 +201,7 @@ mod cert_authority {
     }
 }
 
-mod vcek {
+pub mod vcek {
     use reqwest::StatusCode;
 
     use super::*;
