@@ -40,7 +40,7 @@ pub fn find_cert_in_dir(dir: &Path, cert: &str) -> Result<PathBuf, anyhow::Error
     }
 }
 
-mod certificate_chain {
+pub mod certificate_chain {
     use sev::certs::snp::Verifiable;
 
     use super::*;
@@ -142,7 +142,7 @@ mod certificate_chain {
     }
 }
 
-mod attestation {
+pub mod attestation {
     use super::*;
 
     use asn1_rs::{oid, FromDer, Oid};
