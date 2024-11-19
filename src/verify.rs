@@ -194,7 +194,7 @@ pub mod attestation {
         pub signature: bool,
     }
 
-    fn verify_attestation_signature(
+    pub fn verify_attestation_signature(
         vcek: Certificate,
         att_report: AttestationReport,
         quiet: bool,
@@ -290,7 +290,7 @@ pub mod attestation {
         }
     }
 
-    fn verify_attestation_tcb(
+    pub fn verify_attestation_tcb(
         vcek: Certificate,
         att_report: AttestationReport,
         quiet: bool,
